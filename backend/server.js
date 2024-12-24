@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 
 // variable that contains express app
@@ -10,6 +11,9 @@ app.get('/', (req, res) => {
 })
 
 // listener
-app.listen(4000, () => {
-    console.log('listening on port 4000')
+// process.env.PORT is pulling port # from .env file
+app.listen(process.env.PORT, () => {
+    console.log('listening on port', process.env.PORT)
 })
+
+process.env
