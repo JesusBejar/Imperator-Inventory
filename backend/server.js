@@ -12,6 +12,9 @@ app.use((req, res, next) => {
     next()
 })
 
+// attaches all routes to the app
+app.use('/api/divisons', divisionRoutes)
+
 // listener
 // process.env.PORT is pulling port # from .env file
 app.listen(process.env.PORT, () => {
