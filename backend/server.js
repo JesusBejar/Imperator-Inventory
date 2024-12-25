@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const divisionRoutes = require('./routes/divisions')
 
 // variable that contains express app
 const app = express()
@@ -9,12 +10,6 @@ const app = express()
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
-})
-
-// route handlers
-app.get('/', (req, res) => {
-    res.json({mssg: 'Welcome to my project'})
-
 })
 
 // listener

@@ -11,3 +11,5 @@ router.get('/', () => {
 // delete
 
 // patch
+
+module.exports = router
