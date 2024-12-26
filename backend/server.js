@@ -1,4 +1,5 @@
 require('dotenv').config()
+
 const express = require('express')
 const divisionRoutes = require('./routes/divisions')
 
@@ -6,6 +7,9 @@ const divisionRoutes = require('./routes/divisions')
 const app = express()
 
 // middleware
+// the line below is important but i don't know why
+app.use(express.json())
+
 // invoke next so the next function will run
 app.use((req, res, next) => {
     console.log(req.path, req.method)
@@ -13,7 +17,7 @@ app.use((req, res, next) => {
 })
 
 // attaches all routes to the app
-app.use('/api/divisons', divisionRoutes)
+app.use('/api/divisions', divisionRoutes)
 
 // listener
 // process.env.PORT is pulling port # from .env file
