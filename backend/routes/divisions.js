@@ -2,7 +2,9 @@ const express = require('express')
 const {
     createDivision, 
     getSingleDivision, 
-    getDivisions
+    getDivisions, 
+    deleteDivision, 
+    updateDivision
 } = require('../controllers/divisionController')
 const router = express.Router()
 
@@ -16,12 +18,8 @@ router.get('/', getDivisions)
 router.post('/', createDivision)
 
 // delete
-router.delete('/:id', (req, res) => {
-    res.json({mssg: "Delete an individual division"})
-})
+router.delete('/:id', deleteDivision)
 // patch (or update)
-router.patch('/:id', (req, res) => {
-    res.json({mssg: "Update an individual division"})
-})
+router.patch('/:id', updateDivision)
 
 module.exports = router
