@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+const mongoose = require('mongoose')
 const divisionRoutes = require('./routes/divisions')
 
 // variable that contains express app
@@ -19,10 +20,19 @@ app.use((req, res, next) => {
 // attaches all routes to the app
 app.use('/api/divisions', divisionRoutes)
 
-// listener
-// process.env.PORT is pulling port # from .env file
-app.listen(process.env.PORT, () => {
+// connect to database
+mongoose.connect(process.env.MONGO_URI)
+.then(() => {
+    console.log('database connection made')
+    // listener
+    // process.env.PORT is pulling port # from .env file
+    app.listen(process.env.PORT, () => {
     console.log('listening on port', process.env.PORT)
 })
+})
+.catch((error) => {
+    console.log(error)
+})
+
 
 process.env
