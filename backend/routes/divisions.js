@@ -1,19 +1,19 @@
 const express = require('express')
+const {
+    createDivision, 
+    getSingleDivision, 
+    getDivisions
+} = require('../controllers/divisionController')
 const router = express.Router()
 
 // get single division
-router.get('/', (req, res) => {
-    res.json({mssg: "Get all divisions"})
-})
+router.get('/:id', getSingleDivision)
+
 // get all divisions
-router.get('/:id', (req, res) => {
-    res.json({mssg: "Get an individual division"})
-})
+router.get('/', getDivisions)
 
 // post
-router.post('/', (req, res) => {
-    res.json({mssg: "Post a new individual division"})
-})
+router.post('/', createDivision)
 
 // delete
 router.delete('/:id', (req, res) => {
