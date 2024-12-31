@@ -5,7 +5,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchDivisions = async () => {
-            const response = await fetch('http://localhost:4000/api/divisions')
+            const response = await fetch('/api/divisions')
             const json = await response.json()
 
             if (response.ok) {
