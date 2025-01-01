@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import DivisionDetails from "../components/DivisionDetails"
 
 const Home = () => {
     const [divisions, setDivisions] = useState(null)
@@ -20,7 +21,7 @@ const Home = () => {
         <div className="home">
             <div className='divisions'>
                 {divisions && divisions.map((division) => (
-                    <p key={division._id}>{division.dTitle}</p>
+                    <DivisionDetails key={division._id} division={division}/>
                 ))}
             </div>
         </div>
