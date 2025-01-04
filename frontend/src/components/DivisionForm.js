@@ -61,6 +61,7 @@ const divisionForm = () => {
             />
 
             <button>Add Division</button>
+            {error && <div className='error'>{error}</div>}
         </form>
     )
 }
