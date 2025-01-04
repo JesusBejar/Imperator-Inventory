@@ -4,6 +4,7 @@ const divisionForm = () => {
     const [dTitle, setdTitle] = useState('')
     const [iCount, setiCount] = useState('')
     const [hCount, sethCount] = useState('')
+    const [error, setError] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -19,6 +20,19 @@ const divisionForm = () => {
         })
 
         const json = await response.json()
+
+        if(!response.ok) {
+            // error check
+            setError(json.error)
+        }
+        if (response.ok) {
+            // these empty strings reset the fields so users can add more divisions
+            setdTitle('')
+            setiCount('')
+            sethCount('')
+            setError(null)
+            console.log("new division added", json)
+        }
     }
 
     return (
@@ -50,3 +64,5 @@ const divisionForm = () => {
         </form>
     )
 }
+
+export default divisionForm

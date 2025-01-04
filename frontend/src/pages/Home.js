@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import DivisionDetails from "../components/DivisionDetails"
+import divisionForm from "../components/DivisionForm"
+
 
 const Home = () => {
     const [divisions, setDivisions] = useState(null)
@@ -24,6 +26,7 @@ const Home = () => {
                     <DivisionDetails key={division._id} division={division}/>
                 ))}
             </div>
+            <divisionForm />
         </div>
     )
 }
