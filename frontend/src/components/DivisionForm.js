@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const divisionForm = () => {
+const DivisionForm = () => {
     const [dTitle, setdTitle] = useState('')
     const [iCount, setiCount] = useState('')
     const [hCount, sethCount] = useState('')
@@ -61,9 +61,10 @@ const divisionForm = () => {
             />
 
             <button>Add Division</button>
+            {/* the msg below outputs specific field of error */}
             {error && <div className='error'>{error}</div>}
         </form>
     )
 }
 
-export default divisionForm
+export default DivisionForm

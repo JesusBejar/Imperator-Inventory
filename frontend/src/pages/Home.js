@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import DivisionDetails from "../components/DivisionDetails"
-import divisionForm from "../components/DivisionForm"
+import DivisionForm from "../components/DivisionForm"
 
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
                     <DivisionDetails key={division._id} division={division}/>
                 ))}
             </div>
-            <divisionForm />
+            <DivisionForm />
         </div>
     )
 }
