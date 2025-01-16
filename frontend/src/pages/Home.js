@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import DivisionDetails from "../components/DivisionDetails"
+import DivisionForm from "../components/DivisionForm"
+
 
 const Home = () => {
     const [divisions, setDivisions] = useState(null)
@@ -18,11 +21,18 @@ const Home = () => {
 
     return (
         <div className="home">
+<<<<<<< HEAD
             <div className="divisions">
                 {divisions && divisions.map((Division) => (
                     <p key={Division._id}>{Division.title}</p>
+=======
+            <div className='divisions'>
+                {divisions && divisions.map((division) => (
+                    <DivisionDetails key={division._id} division={division}/>
+>>>>>>> c6a491c077259c4463097a3c2b9fe460ddde94fa
                 ))}
             </div>
+            <DivisionForm />
         </div>
     )
 }
