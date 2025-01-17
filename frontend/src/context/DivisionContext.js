@@ -24,7 +24,7 @@ export const DivisionsContextProvider = ({ children }) => {
     })
 
     return (
-        <DivisionsContext.Provider value={{state, dispatch}}> 
+        <DivisionsContext.Provider value={{...state, dispatch}}> 
             { children }
         </DivisionsContext.Provider>
     )
